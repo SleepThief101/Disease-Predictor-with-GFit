@@ -1,0 +1,40 @@
+Symptoms: fatigue, None, None, None, None, None
+Random Forest Prediction: Hepatitis C
+Naive Bayes Prediction: Bronchial Asthma
+SVM Prediction: Urinary tract infection
+Final Prediction: Bronchial Asthma
+Random Forest Accuracy: 1.00
+Naive Bayes Accuracy: 1.00
+SVM Accuracy: 1.00
+Random Forest Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]
+Naive Bayes Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]
+SVM Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]
+Combined Model Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]

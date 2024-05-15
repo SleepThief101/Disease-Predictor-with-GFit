@@ -1,0 +1,40 @@
+Symptoms: dehydration, anxiety, restlessness, None, None, None
+Random Forest Prediction: Gastroenteritis
+Naive Bayes Prediction: Gastroenteritis
+SVM Prediction: Gastroenteritis
+Final Prediction: Gastroenteritis
+Random Forest Accuracy: 1.00
+Naive Bayes Accuracy: 1.00
+SVM Accuracy: 1.00
+Random Forest Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]
+Naive Bayes Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]
+SVM Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]
+Combined Model Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]

@@ -1,0 +1,40 @@
+Symptoms: dark urine, polyuria, scurring, sunken eyes, depression, red spots over body
+Random Forest Prediction: Acne
+Naive Bayes Prediction: Acne
+SVM Prediction: Acne
+Final Prediction: Acne
+Random Forest Accuracy: 1.00
+Naive Bayes Accuracy: 1.00
+SVM Accuracy: 1.00
+Random Forest Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]
+Naive Bayes Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]
+SVM Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]
+Combined Model Confusion Matrix:
+[[32  0  0 ...  0  0  0]
+ [ 0 21  0 ...  0  0  0]
+ [ 0  0 20 ...  0  0  0]
+ ...
+ [ 0  0  0 ... 26  0  0]
+ [ 0  0  0 ...  0 18  0]
+ [ 0  0  0 ...  0  0 22]]

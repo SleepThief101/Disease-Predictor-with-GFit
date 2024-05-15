@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 1000px;
+            margin-top: 4rem;
+            padding: 3rem;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        ul.list-group {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .img-container {
+            margin-bottom: 2rem;
+        }
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        .description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .col-md-6 {
+            flex: 0 0 48%;
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 768px) {
+            .col-md-6 {
+                flex: 0 0 100%;
+            }
+        }
+        .load-button {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Results</h1>
+
+        <h2>Symptoms:</h2>
+        <ul class="list-group">
+            {% for symptom in symptoms %}
+            <li class="list-group-item">{{ symptom }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Predictions:</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Random Forest: {{ predictions.rf_model_prediction }} (Accuracy: {{ predictions.rf_accuracy|round(2) * 100 }}%)</li>
+            <li class="list-group-item">Naive Bayes: {{ predictions.naive_bayes_prediction }} (Accuracy: {{ predictions.nb_accuracy|round(2) * 100 }}%)</li>
+            <li class="list-group-item">SVM: {{ predictions.svm_model_prediction }} (Accuracy: {{ predictions.svm_accuracy|round(2) * 100 }}%)</li>
+            <li class="list-group-item">Final Prediction: {{ predictions.final_prediction }}</li>
+        </ul>
+
+        <h2>Confusion Matrices:</h2>
+        <div class="row">
+            <div class="col-md-6 img-container">
+                <h3>Random Forest Confusion Matrix</h3>
+                <div class="description">This matrix shows the performance of the Random Forest model on the test data.</div>
+                <img src="{{ url_for('static', filename='rf_cm.png') }}" class="img-fluid" alt="Random Forest Confusion Matrix">
+            </div>
+            <div class="col-md-6 img-container">
+                <h3>Combined Model Confusion Matrix</h3>
+                <div class="description">This matrix shows the performance of the combined model on the test data.</div>
+                <img src="{{ url_for('static', filename='combined_cm.png') }}" class="img-fluid" alt="Combined Model Confusion Matrix">
+            </div>
+            <div class="col-md-6 img-container">
+                <h3>Naive Bayes Confusion Matrix</h3>
+                <div class="description">This matrix shows the performance of the Naive Bayes model on the test data.</div>
+                <img src="{{ url_for('static', filename='nb_cm.png') }}" class="img-fluid" alt="Naive Bayes Confusion Matrix">
+            </div>
+            <div class="col-md-6 img-container">
+                <h3>Support Vector Machine Confusion Matrix</h3>
+                <div class="description">This matrix shows the performance of the SVM model on the test data.</div>
+                <img src="{{ url_for('static', filename='svm_cm.png') }}" class="img-fluid" alt="SVM Confusion Matrix">
+            </div>
+        </div>
+
+        <h2>Prediction File:</h2>
+        <p>The prediction results have been saved to the file: <a href="{{ url_for('view_file', file_name=file_name) }}">{{ file_name }}</a></p>
+
+<form action="/previous_predictions" method="get" style="display: none;" id="previous-predictions-form">
+</form>
+
+
+<button class="btn btn-primary load-button" onclick="document.getElementById('previous-predictions-form').submit()">Load Previous Prediction</button>
+
+    </div>
+</body>
+</html>

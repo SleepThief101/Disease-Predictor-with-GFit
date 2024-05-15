@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Fit Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .logo {
+            color: #007bff;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px; /* Add margin top to create a gap */
+        }
+
+        .images img {
+            width: 15%;
+            max-width: 100px;
+            margin: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <i class="logo fas fa-heartbeat"></i>
+        <h1>Welcome to Google Fit Data</h1>
+        <p>Google Fit is a health-tracking platform developed by Google. It is designed to help users track their fitness and wellness data, such as activity levels, heart rate, sleep patterns, and more. With Google Fit, you can set fitness goals, monitor your progress, and gain insights into your overall health.</p>
+        <img src="{{ url_for('static', filename='google_fit_logo.webp') }}" alt="logo">
+        <form action="{{ url_for('authenticate_google_fit') }}" method="post">
+            <button type="submit">Authenticate Google Fit</button>
+        </form>
+        <div class="images">
+            <img src="{{ url_for('static', filename='1.png') }}" alt="Image 1">
+            <img src="{{ url_for('static', filename='2.png') }}" alt="Image 2">
+            <img src="{{ url_for('static', filename='5.png') }}" alt="Image 3">
+            <img src="{{ url_for('static', filename='4.png') }}" alt="Image 4">
+            <img src="{{ url_for('static', filename='3.png') }}" alt="Image 5">
+        </div>
+    </div>
+</body>
+
+</html>
