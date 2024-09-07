@@ -36,8 +36,8 @@ API_VERSION = 'v1'
 API_USER_ID = 'me'
 
 # Load datasets
-training_data = "/home/rudransh/new new new new new/templates/Training.csv"
-testing_data = "/home/rudransh/new new new new new/templates/Testing.csv"
+training_data = "/Path/to/Training.csv"
+testing_data = "/Path/to/Testing.csv"
 
 # Load data
 data = pd.read_csv(training_data).dropna(axis=1)
